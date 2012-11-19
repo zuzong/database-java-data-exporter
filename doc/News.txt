@@ -1,0 +1,5 @@
+News.txt
+
+Database Java Data Exporter
+
+1.0.0	2011-02-25	Source Code & jar-executable getAscii, getAsciiNG, getBlob, getBlobNG.

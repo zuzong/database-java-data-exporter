@@ -1,0 +1,58 @@
+Install_no.txt
+
+database-java-exporter
+
+Uttrekk av dokumenter
+De små programsnuttene som er laget har fungert for der de er blitt brukt. De er imidlertid ikke særlig brukervennlige, og ikke særlig allsidige – de er laget for de systemene som de er testet for i øyeblikket.
+
+Kildekoden følger med, den kan importeres i Eclipse (http://www.eclipse.org/). 
+For å laste ned Eclipse, last ned ”Eclipse IDE For Java Developers” fra http://www.eclipse.org/downloads/ 
+Kildekoden kan modifiseres etter eget ønske.
+
+Forutsetninger
+Java
+Java Runtime Environment må være installert på maskinen. De fleste har dette fra før, men hvis ikke kan det lastes ned fra http://java.com/en/
+
+For enkelhets skyld bør Java ligge i PATH-variabelen på maskinen, slik at man i CMD kan bruke kommandoen ”java” uten å henvise til det fullstendige mappenavnet.
+
+I Windows XP gjøres dette slik:
+1. Høyreklikk på Min Datamaskin
+2. Velg ”Egenskaper”
+3. Velg ”Avansert”
+4. Klikk på ”Miljøvariabler”
+5. Under ”Systemvariabler” ligger en variabel kalt ”Path”. Her skal mappenavnet til Java-installasjonens bin-mappe ligge. 
+
+F. eks. ”C:\Programfiler\Java\jre6\bin”
+
+Kommandolinje
+De små javaprogrammene kjøres fra kommandolinjen i Windows. I Windows XP startes dette enklest med å klikke Start ?Kjørt og så skrive ”cmd” og trykke Enter. Lag en mappe til dokumentene, for eksempel c:\uttrekk. Kopier Java-filen (.jar) du skal bruke over i denne mappen, og naviger til c:\uttrekk i cmd.
+
+BLOB-elementer
+Programmet for å hente ut blob-elementer tar følgende parametre i følgende rekkefølge:
+1. host  - vanligvis localhost eller 127.0.0.1
+2. database – navn på databasen
+3. user – databasebruker, for eksempel root
+4. tabell – tabellen der filene ligger
+5. column – kolonnen der filene ligger
+6. index – kolonne med nummer på filen
+
+Man kan altså kjøre programmet med følgende kommando:
+java –jar getBlob.jar localhost uniquedb root doktabell dokkol loepenr
+Det er verdt å merke seg at programmet slik det er i dag larger alle filer som .doc. Alle filer jobbet med hittil har vært doc.
+
+Ascii – tekst i blokker
+Programmet for å hente ut ascii-elementer tar følgende parametre i følgende rekkefølge:
+1. host  - vanligvis localhost eller 127.0.0.1
+2. database – navn på databasen
+3. user – databasebruker, for eksempel root
+4. tabell – tabellen der filene ligger
+
+Man kan altså kjøre programmet med følgende kommando:
+java –jar getAscii.jar localhost uniquedb root doktabell 
+
+Det er verdt å merke seg at programmet slik det er i dag ser om filen skal være RTF, og lagrer som RTF eller som ren txt.
+Dersom programmet kjøres i Linux, er all tekst case-sensitivt: dersom tabellen med dokumentene heter UQWIDETAB med store bokstaver må programmet kjøres med dette som parameter – med store bokstaver.
+
+Se eksempel for bruk vedlagt som egne bildefiler – kommandoen som skal kjøres er markert med hvitt:
+
+I ene bildet jobber programmet, for en del ID’er finnes det ikke dokumenter men for ID 361 finnes et dokument som er fordelt på 99 biter.
