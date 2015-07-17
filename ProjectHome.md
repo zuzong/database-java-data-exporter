@@ -1,0 +1,1 @@
+Exports data from your database using Java. Exports documents saved in database as blobs and ascii blocks.
